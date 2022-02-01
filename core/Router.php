@@ -4,11 +4,23 @@ namespace App\core;
 
 class Router
 {
-    public function __construct()
+    protected array $routes = [];
+    public Request $request;
+
+    public function __construct(Request $request)
     {
+        $this->request = $request;
     }
 
-    public function get(string $string, \Closure $param)
+
+
+    public function get(string $path, $callback)
     {
+        $this->routes['get'][$path] = $callback;
+    }
+
+    public function resolve()
+    {
+        $this->request->getPath();
     }
 }
