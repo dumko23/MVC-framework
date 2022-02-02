@@ -3,24 +3,27 @@
 namespace App\controllers;
 
 use App\core\Application;
+use App\core\Controller;
+use App\core\Request;
 
-class SiteController
+class SiteController extends Controller
 {
-    public static function handleContact()
+    public static function handleContact(Request $request): string
     {
+        $body = $request->getBody();
         return "Handling submitted data";
     }
 
-    public static function home()
+    public function home(): bool|array|string
     {
         $params = [
             'name' => 'Stranger'
         ];
-        return Application::$app->router->renderView('home', $params);
+        return $this->render('home', $params);
     }
 
-    public static function contact()
+    public function contact(): bool|array|string
     {
-        return Application::$app->router->renderView('contact');
+        return $this->render('contact');
     }
 }
