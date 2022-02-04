@@ -33,7 +33,14 @@ class Application
         if ($primaryValue) {
             $primaryKey = $this->userClass::primaryKey();
             $this->user = $this->userClass::findOne([$primaryKey => $primaryValue]);
+        } else {
+            $this->user = null;
         }
+    }
+
+    public static function isGuest(): bool
+    {
+        return !self::$app->user;
     }
 
     public function run()
@@ -63,10 +70,12 @@ class Application
         $primaryKey = $user->primaryKey();
         $primaryValue = $user->{$primaryKey};
         $this->session->set('user', $primaryValue);
+        return true;
     }
 
     public function logout(){
         $this->user = null;
         $this->session->remove('user');
+        return true;
     }
 }
