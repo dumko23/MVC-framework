@@ -33,6 +33,7 @@ class Database
             $className = pathinfo($migration, PATHINFO_FILENAME);
             $instance = new $className();
             $instance->up();
+            $this->log("Applied migration $migration");
             $newMigrations[] = $migration;
         }
         if (!empty($newMigrations)) {
