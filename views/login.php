@@ -1,17 +1,23 @@
-<h1>Log in</h1>
+<?php
+/** @var $model User */
+?>
 
-<form action="" method="post">
-    <div class="mb-3">
-        <label class="form-label">Subject</label>
-        <input type="text" name="subject" class="form-control">
+<h1>Log in</h1>
+<?php use App\core\form\Form;
+use App\models\User;
+
+$form = Form::begin('', 'post')?>
+<div class="row">
+    <div class="col">
+        <?php echo $form->field($model, 'firstname') ?>
     </div>
-    <div class="mb-3">
-        <label class="form-label">Email</label>
-        <input type="email" name="email" class="form-control">
+    <div class="col">
+        <?php echo $form->field($model, 'lastname') ?>
     </div>
-    <div class="mb-3">
-        <label class="form-label">Body</label>
-        <textarea  name="body" class="form-control"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+</div>
+<?php echo $form->field($model, 'email')->typeField('email') ?>
+<?php echo $form->field($model, 'password')->typeField('password') ?>
+<?php echo $form->field($model, 'confirmPassword')->typeField('confirmPassword') ?>
+<button type="submit" class="btn btn-primary">Submit</button>
+
+<?php Form::end() ?>

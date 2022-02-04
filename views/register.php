@@ -1,7 +1,12 @@
+<?php
+/** @var $model User */
+?>
+
 <h1>Registration</h1>
 <?php use App\core\form\Form;
+use App\models\User;
 
- $form = Form::begin('', 'post')?>
+$form = Form::begin('', 'post')?>
 <div class="row">
     <div class="col">
         <?php echo $form->field($model, 'firstname') ?>
