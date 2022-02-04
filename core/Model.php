@@ -58,7 +58,7 @@ abstract class Model
                     $statement->bindValue(":attr", $value);
                     $statement->execute();
                     $record = $statement->fetchObject();
-                    if ($record){
+                    if ($record) {
                         $this->addErrorForRule($attribute, self::RULE_UNIQUE, ['field' => $this->getLabel($attribute)]);
                     }
                 }
@@ -103,11 +103,13 @@ abstract class Model
         return $this->errors[$attribute][0] ?? false;
     }
 
-    public function labels():array {
+    public function labels(): array
+    {
         return [];
     }
 
-    public function getLabel($attribute){
+    public function getLabel($attribute)
+    {
         return $this->labels()[$attribute] ?? $attribute;
     }
 }
