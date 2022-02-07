@@ -2,9 +2,9 @@
 
 namespace App\models;
 
-use App\core\DbModel;
-use App\core\Model;
-use App\core\UserModel;
+use Dumko23\PhpMvcCore\DbModel;
+use Dumko23\PhpMvcCore\Model;
+use Dumko23\PhpMvcCore\UserModel;
 
 class User extends UserModel
 {

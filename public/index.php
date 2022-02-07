@@ -1,7 +1,7 @@
 <?php
 use App\controllers\AuthController;
 use App\controllers\SiteController;
-use App\core\Application;
+use Dumko23\PhpMvcCore\Application;
 use App\models\User;
 
 require_once __DIR__ . '/../vendor/autoload.php';

@@ -2,8 +2,8 @@
 
 namespace App\models;
 
-use App\core\Application;
-use App\core\Model;
+use Dumko23\PhpMvcCore\Application;
+use Dumko23\PhpMvcCore\Model;
 
 class LoginForm extends Model
 {

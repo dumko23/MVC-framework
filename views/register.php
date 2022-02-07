@@ -3,7 +3,7 @@
 ?>
 
 <h1>Registration</h1>
-<?php use App\core\form\Form;
+<?php use Dumko23\PhpMvcCore\form\Form;
 use App\models\User;
 
 $form = Form::begin('', 'post')?>

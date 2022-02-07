@@ -4,8 +4,41 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "63c53de15b303d9fb93c12fec676d9c2",
+    "content-hash": "5f511e7d67579d646f6d983c59cfe35e",
     "packages": [
+        {
+            "name": "dumko23/my-php-mvc-core",
+            "version": "v1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dumko23/php-mvc-core.git",
+                "reference": "2cf7f12f708cb04bc972aa1b9220b857f2dc4f75"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dumko23/php-mvc-core/zipball/2cf7f12f708cb04bc972aa1b9220b857f2dc4f75",
+                "reference": "2cf7f12f708cb04bc972aa1b9220b857f2dc4f75",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dumko23\\PhpMvcCore\\": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Dmytro Parkhomenko",
+                    "email": "dmytro.parkhomenko@geocomply.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/dumko23/php-mvc-core/issues",
+                "source": "https://github.com/dumko23/php-mvc-core/tree/v1.0.4"
+            },
+            "time": "2022-02-07T13:13:48+00:00"
+        },
         {
             "name": "graham-campbell/result-type",
             "version": "v1.0.4",
@@ -474,7 +507,9 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "ext-pdo": "*"
+    },
     "platform-dev": [],
     "plugin-api-version": "2.2.0"
 }

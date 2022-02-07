@@ -1,6 +1,6 @@
 <?php
 
-use App\core\Application;
+use Dumko23\PhpMvcCore\Application;
 
 ?>
 

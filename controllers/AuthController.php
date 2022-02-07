@@ -2,11 +2,11 @@
 
 namespace App\controllers;
 
-use App\core\Application;
-use App\core\Controller;
-use App\core\middlewares\AuthMiddleware;
-use App\core\Request;
-use App\core\Response;
+use Dumko23\PhpMvcCore\Application;
+use Dumko23\PhpMvcCore\Controller;
+use Dumko23\PhpMvcCore\middlewares\AuthMiddleware;
+use Dumko23\PhpMvcCore\Request;
+use Dumko23\PhpMvcCore\Response;
 use App\models\LoginForm;
 use App\models\User;
 

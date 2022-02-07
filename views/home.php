@@ -2,7 +2,7 @@
 
 /** @var $this View */
 
-use App\core\View;
+use Dumko23\PhpMvcCore\View;
 $this->title = 'Home';
 ?>
 

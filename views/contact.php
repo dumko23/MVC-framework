@@ -3,9 +3,9 @@
 /** @var $model ContactForm */
 
 
-use App\core\form\Form;
-use App\core\form\TextareaField;
-use App\core\View;
+use Dumko23\PhpMvcCore\form\Form;
+use Dumko23\PhpMvcCore\form\TextareaField;
+use Dumko23\PhpMvcCore\View;
 use App\models\ContactForm;
 
 $this->title = 'Contact Us';

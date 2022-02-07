@@ -2,7 +2,7 @@
 
 namespace App\models;
 
-use App\core\Model;
+use Dumko23\PhpMvcCore\Model;
 
 class ContactForm extends Model
 {
