@@ -6,6 +6,7 @@ use App\models\User;
 
 class Application
 {
+    public string $layout = 'main';
     public static string $ROOT_DIR;
     public string $userClass;
     public Router $router;
@@ -15,7 +16,7 @@ class Application
     public Session $session;
     public ?DbModel $user;
     public static Application $app;
-    public Controller $controller;
+    public ?Controller $controller = null;
 
     public function __construct($rootPath, array $config)
     {
@@ -45,7 +46,15 @@ class Application
 
     public function run()
     {
-        echo $this->router->resolve();
+
+        try {
+            echo $this->router->resolve();
+        } catch (\Exception $e){
+            $this->response->setStatusCode($e->getCode());
+            echo $this->router->renderView('_error', [
+                'exception' => $e,
+            ]);
+        }
     }
 
     /**
@@ -64,7 +73,7 @@ class Application
         return $this->controller;
     }
 
-    public function login(DbModel $user)
+    public function login(DbModel $user): bool
     {
         $this->user = $user;
         $primaryKey = $user->primaryKey();
@@ -73,7 +82,8 @@ class Application
         return true;
     }
 
-    public function logout(){
+    public function logout(): bool
+    {
         $this->user = null;
         $this->session->remove('user');
         return true;
