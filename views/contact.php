@@ -1,25 +1,23 @@
 <?php
 /** @var $this View */
+/** @var $model ContactForm */
 
+
+use App\core\form\Form;
+use App\core\form\TextareaField;
 use App\core\View;
+use App\models\ContactForm;
+
 $this->title = 'Contact Us';
 ?>
 
 
 <h1>Contact us</h1>
 
-<form action="" method="post">
-    <div class="mb-3">
-        <label class="form-label">Subject</label>
-        <input type="text" name="subject" class="form-control">
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Email</label>
-        <input type="email" name="email" class="form-control">
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Body</label>
-        <textarea  name="body" class="form-control"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+<?php $form = Form::begin('', 'post') ?>
+<?php echo $form->field($model, 'subject',)->typeField('text') ?>
+<?php echo $form->field($model, 'email',)->typeField('email') ?>
+<?php echo new TextareaField($model, 'body') ?>
+<button type="submit" class="btn btn-primary">Submit</button>
+<?php Form::end(); ?>
+
