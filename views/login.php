@@ -1,5 +1,5 @@
 <?php
-/** @var $model User */
+/** @var $model User*/
 ?>
 
 <h1>Log in</h1>
